@@ -4,6 +4,8 @@ Will run on a 24G GPU.
 
 Will print out the memory usage of the model via nividia-smi.
 
+The specific versions in the requirements file are supposedly due to a regression that caused an increase in memory usage.  I haven't verified all this myself, so need to see if I can remove these.
+
 ```bash
 pip install -r requirements.txt
 
