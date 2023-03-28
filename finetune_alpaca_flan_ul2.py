@@ -61,7 +61,7 @@ config = LoraConfig(
     bias="none",
     #"enable_lora": null,
     fan_in_fan_out=False,
-    inference_mode=True,
+    inference_mode=False,
     lora_alpha=32,
     lora_dropout=0.1,
     merge_weights=False,
@@ -72,8 +72,8 @@ config = LoraConfig(
     "q",
     "v"
     ],
-    #"task_type": "SEQ_2_SEQ_LM"
-    task_type="CAUSAL_LM"
+    task_type="SEQ_2_SEQ_LM"
+    #task_type="CAUSAL_LM"
 )
 
 def generate_prompt(data_point):
