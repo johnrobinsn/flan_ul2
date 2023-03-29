@@ -141,6 +141,7 @@ def print_trainable_parameters(model):
 
 def model_fn(training=False):
     #load model and tokenizer
+    #model = AutoModelForSeq2SeqLM.from_pretrained(model_name_or_path)
     model = T5ForConditionalGeneration.from_pretrained("google/flan-ul2",
                                                        load_in_8bit=True, device_map="auto", cache_dir="/tmp/model_cache/")
     tokenizer = AutoTokenizer.from_pretrained("google/flan-ul2")

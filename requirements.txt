@@ -5,3 +5,5 @@ accelerate==0.15.0
 datasets
 peft
 wandb
+sentencepiece
+protobuf==3.20
