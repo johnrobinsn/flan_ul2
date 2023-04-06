@@ -19,12 +19,3 @@ export CUDA_VISIBLE_DEVICES=0
 python inference_flan_ul2.py
 ```
 
-
-
-Trying to finetune with 24G GPU.
-
-without peft 20,469 MiB vs 20,521MiB with... ?
-
-todo
-try gradient checkpointing
-try multiprocessing on 2 24G GPUs
