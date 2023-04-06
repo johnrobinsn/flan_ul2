@@ -1,3 +1,8 @@
+# Flan-* training and inference using int8
+
+Please see the [train-peft-flan-ul2-int8-alpaca.ipynb](./train-peft-flan-ul2-int8-alpaca.ipynb) notebook.
+
+
 # Flan-UL2 inference using int8
 
 Will run on a 24G GPU.
