@@ -2,11 +2,15 @@ from transformers import T5ForConditionalGeneration, AutoTokenizer
 import subprocess
 
 
+#model = "google/flan-ul2"
+model_name = "google/flan-t5-xxl"
+
+
 def model_fn():
     #load model and tokenizer
-    model = T5ForConditionalGeneration.from_pretrained("google/flan-ul2",
+    model = T5ForConditionalGeneration.from_pretrained(model_name,
                                                        load_in_8bit=True, device_map="auto", cache_dir="/tmp/model_cache/")
-    tokenizer = AutoTokenizer.from_pretrained("google/flan-ul2")
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
     
     # print 'nvidia-smi' output to see how much VRAM is being used by the model
     sp = subprocess.Popen(['nvidia-smi'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -40,9 +44,9 @@ model,tokenizer = model_fn()
 data = {
     "inputs": '', 
     "min_length": 20, 
-    "max_length": 50, 
+    "max_length": 250, 
     "do_sample": True,
-    "temperature": 0.6,
+    "temperature": 0.8,
     }
 
 input_str = ''
@@ -51,4 +55,4 @@ while input_str != 'quit' and input_str != 'exit':
     input_str = input('Enter a prompt: ')
     data['inputs'] = input_str
     res = predict_fn(data,(model,tokenizer))
-    print(res)
+    print('Output: ', res)
