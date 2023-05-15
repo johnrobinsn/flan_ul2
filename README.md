@@ -19,3 +19,4 @@ export CUDA_VISIBLE_DEVICES=0
 python inference_flan_ul2.py
 ```
 
+# redpajama
